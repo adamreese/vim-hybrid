@@ -528,9 +528,7 @@ exe 'hi! diffLine'        .s:fg_purple      .s:bg_none        .s:fmt_none
 
 " }}}
 
-exe 'hi! EndOfBuffer guifg=' . s:gui_background . s:bg_none . s:fmt_none
-
-exe 'hi! NeomakeErrorSign'        .s:fg_red .s:bg_none        .s:fmt_none
+exe 'hi! NeomakeErrorSign'   .s:fg_red         .s:bg_none .s:fmt_none
 
 " Legal: {{{
 " ----------------------------------------------------------------------------
