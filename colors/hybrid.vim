@@ -79,98 +79,67 @@ endif
 let g:colors_name = 'hybrid'
 
 " }}}
-" GUI And Cterm Palettes: {{{
+" GUI Palettes: {{{
 " ----------------------------------------------------------------------------
 
-let s:palette = {'gui' : {} , 'cterm' : {}}
+let s:palette = {}
 
-if exists('g:hybrid_reduced_contrast') && g:hybrid_reduced_contrast == 1
-  let s:gui_background = '#232c31'
-  let s:gui_selection  = '#425059'
-  let s:gui_line       = '#2d3c46'
-  let s:gui_comment    = '#6c7a80'
-else
-  let s:gui_background = '#1d1f21'
-  let s:gui_selection  = '#373b41'
-  let s:gui_line       = '#282a2e'
-  let s:gui_comment    = '#707880'
-endif
+let s:vmode      = 'gui'
 
-let s:palette.gui.background = s:gui_background
-let s:palette.gui.foreground = '#c5c8c6'
-let s:palette.gui.selection  = s:gui_selection
-let s:palette.gui.line       = s:gui_line
-let s:palette.gui.comment    = s:gui_comment
-let s:palette.gui.red        = '#cc6666'
-let s:palette.gui.orange     = '#de935f'
-let s:palette.gui.yellow     = '#f0c674'
-let s:palette.gui.green      = '#b5bd68'
-let s:palette.gui.aqua       = '#8abeb7'
-let s:palette.gui.blue       = '#81a2be'
-let s:palette.gui.purple     = '#b294bb'
-let s:palette.gui.window     = '#303030'
-let s:palette.gui.darkcolumn = '#23252b'
-let s:palette.gui.addbg      = '#5F875F'
-let s:palette.gui.addfg      = '#d7ffaf'
-let s:palette.gui.changebg   = '#5F5F87'
-let s:palette.gui.changefg   = '#d7d7ff'
-let s:palette.gui.delbg      = '#cc6666'
-let s:palette.gui.darkblue   = '#00005f'
-let s:palette.gui.darkcyan   = '#005f5f'
-let s:palette.gui.darkred    = '#5f0000'
-let s:palette.gui.darkpurple = '#5f005f'
+let s:background = '#1d1f21'
+let s:selection  = '#373b41'
+let s:line       = '#282a2e'
+let s:comment    = '#707880'
 
-if exists('g:hybrid_custom_term_colors') && g:hybrid_custom_term_colors == 1
-  let s:cterm_foreground = '15'  " White
-  let s:cterm_selection  = '8'   " DarkGrey
-  let s:cterm_line       = '0'   " Black
-  let s:cterm_comment    = '7'   " LightGrey
-  let s:cterm_red        = '9'   " LightRed
-  let s:cterm_orange     = '3'   " DarkYellow
-  let s:cterm_yellow     = '11'  " LightYellow
-  let s:cterm_green      = '10'  " LightGreen
-  let s:cterm_aqua       = '14'  " LightCyan
-  let s:cterm_blue       = '12'  " LightBlue
-  let s:cterm_purple     = '13'  " LightMagenta
-  let s:cterm_delbg      = '9'   " LightRed
-else
-  let s:cterm_foreground = '250'
-  let s:cterm_selection  = '237'
-  let s:cterm_line       = '235'
-  let s:cterm_comment    = '243'
-  let s:cterm_red        = '167'
-  let s:cterm_orange     = '173'
-  let s:cterm_yellow     = '221'
-  let s:cterm_green      = '143'
-  let s:cterm_aqua       = '109'
-  let s:cterm_blue       = '110'
-  let s:cterm_purple     = '139'
-  let s:cterm_delbg      = '167'
-endif
+let s:foreground = '#c5c8c6'
+let s:red        = '#cc6666'
+let s:orange     = '#de935f'
+let s:yellow     = '#f0c674'
+let s:green      = '#b5bd68'
+let s:aqua       = '#8abeb7'
+let s:blue       = '#81a2be'
+let s:purple     = '#b294bb'
+let s:window     = '#303030'
+let s:darkcolumn = '#23252b'
+let s:addbg      = '#5F875F'
+let s:addfg      = '#d7ffaf'
+let s:changebg   = '#5F5F87'
+let s:changefg   = '#d7d7ff'
+let s:delbg      = '#cc6666'
+let s:darkblue   = '#00005f'
+let s:darkcyan   = '#005f5f'
+let s:darkred    = '#5f0000'
+let s:darkgreen  = '#8c9440'
+let s:darkpurple = '#5f005f'
+let s:darkbar    = '#292d34'
+let s:gray       = '#585858'
 
-let s:palette.cterm.background = '234'
-let s:palette.cterm.foreground = s:cterm_foreground
-let s:palette.cterm.window     = '236'
-let s:palette.cterm.selection  = s:cterm_selection
-let s:palette.cterm.line       = s:cterm_line
-let s:palette.cterm.comment    = s:cterm_comment
-let s:palette.cterm.red        = s:cterm_red
-let s:palette.cterm.orange     = s:cterm_orange
-let s:palette.cterm.yellow     = s:cterm_yellow
-let s:palette.cterm.green      = s:cterm_green
-let s:palette.cterm.aqua       = s:cterm_aqua
-let s:palette.cterm.blue       = s:cterm_blue
-let s:palette.cterm.purple     = s:cterm_purple
-let s:palette.cterm.darkcolumn = '234'
-let s:palette.cterm.addbg      = '65'
-let s:palette.cterm.addfg      = '193'
-let s:palette.cterm.changebg   = '60'
-let s:palette.cterm.changefg   = '189'
-let s:palette.cterm.delbg      = s:cterm_delbg
-let s:palette.cterm.darkblue   = '17'
-let s:palette.cterm.darkcyan   = '24'
-let s:palette.cterm.darkred    = '52'
-let s:palette.cterm.darkpurple = '53'
+let s:palette.background = s:background
+let s:palette.foreground = s:foreground
+let s:palette.selection  = s:selection
+let s:palette.line       = s:line
+let s:palette.comment    = s:comment
+let s:palette.red        = s:red
+let s:palette.orange     = s:orange
+let s:palette.yellow     = s:yellow
+let s:palette.green      = s:green
+let s:palette.aqua       = s:aqua
+let s:palette.blue       = s:blue
+let s:palette.purple     = s:purple
+let s:palette.window     = s:window
+let s:palette.darkcolumn = s:darkcolumn
+let s:palette.addbg      = s:addfg
+let s:palette.addfg      = s:addbg
+let s:palette.changebg   = s:changefg
+let s:palette.changefg   = s:changebg
+let s:palette.delbg      = s:red
+let s:palette.darkblue   = s:darkblue
+let s:palette.darkcyan   = s:darkcyan
+let s:palette.darkred    = s:darkred
+let s:palette.darkgreen  = s:darkgreen
+let s:palette.darkpurple = s:darkpurple
+let s:palette.darkbar    = s:darkbar
+let s:palette.gray       = s:gray
 
 " }}}
 " Formatting Options: {{{
@@ -191,9 +160,8 @@ let s:i      = ',italic'
 function! s:build_prim(hi_elem, field)
   " Given a:hi_elem = bg, a:field = comment
   let l:vname = 's:' . a:hi_elem . '_' . a:field " s:bg_comment
-  let l:gui_assign = 'gui'.a:hi_elem.'='.s:palette.gui[a:field] " guibg=...
-  let l:cterm_assign = 'cterm'.a:hi_elem.'='.s:palette.cterm[a:field] " ctermbg=...
-  exe 'let ' . l:vname . ' = '' ' . l:gui_assign . ' ' . l:cterm_assign . ''''
+  let l:gui_assign = s:vmode.a:hi_elem.'='.s:palette[a:field] " guibg=...
+  exe 'let ' . l:vname . ' = '' ' . l:gui_assign . ''''
 endfunction
 
 let s:bg_foreground = ''
@@ -219,6 +187,8 @@ let s:bg_darkblue = ''
 let s:bg_darkcyan = ''
 let s:bg_darkred = ''
 let s:bg_darkpurple = ''
+let s:bg_darkbar = ''
+let s:bg_gray = ''
 
 let s:bg_none = ' guibg=NONE ctermbg=NONE'
 call s:build_prim('bg', 'foreground')
@@ -243,7 +213,10 @@ call s:build_prim('bg', 'delbg')
 call s:build_prim('bg', 'darkblue')
 call s:build_prim('bg', 'darkcyan')
 call s:build_prim('bg', 'darkred')
+call s:build_prim('bg', 'darkgreen')
 call s:build_prim('bg', 'darkpurple')
+call s:build_prim('bg', 'darkbar')
+call s:build_prim('bg', 'gray')
 
 let s:fg_foreground = ''
 let s:fg_background = ''
@@ -266,7 +239,10 @@ let s:fg_changefg = ''
 let s:fg_darkblue = ''
 let s:fg_darkcyan = ''
 let s:fg_darkred = ''
+let s:fg_darkgreen = ''
 let s:fg_darkpurple = ''
+let s:fg_darkbar = ''
+let s:fg_gray = ''
 
 let s:fg_none = ' guifg=NONE ctermfg=NONE'
 call s:build_prim('fg', 'foreground')
@@ -290,7 +266,10 @@ call s:build_prim('fg', 'changefg')
 call s:build_prim('fg', 'darkblue')
 call s:build_prim('fg', 'darkcyan')
 call s:build_prim('fg', 'darkred')
+call s:build_prim('fg', 'darkgreen')
 call s:build_prim('fg', 'darkpurple')
+call s:build_prim('fg', 'darkbar')
+call s:build_prim('fg', 'gray')
 
 let s:fmt_none = ''
 let s:fmt_bold = ''
@@ -304,17 +283,17 @@ let s:fmt_stnd = ''
 let s:fmt_revr = ''
 let s:fmt_revb = ''
 
-exe 'let s:fmt_none = '' gui=NONE'.          ' cterm=NONE'.          ' term=NONE'        .''''
-exe 'let s:fmt_bold = '' gui=NONE'.s:b.      ' cterm=NONE'.s:b.      ' term=NONE'.s:b    .''''
-exe 'let s:fmt_bldi = '' gui=NONE'.s:b.      ' cterm=NONE'.s:b.      ' term=NONE'.s:b    .''''
-exe 'let s:fmt_undr = '' gui=NONE'.s:u.      ' cterm=NONE'.s:u.      ' term=NONE'.s:u    .''''
-exe 'let s:fmt_undb = '' gui=NONE'.s:u.s:b.  ' cterm=NONE'.s:u.s:b.  ' term=NONE'.s:u.s:b.''''
-exe 'let s:fmt_undi = '' gui=NONE'.s:u.      ' cterm=NONE'.s:u.      ' term=NONE'.s:u    .''''
-exe 'let s:fmt_curl = '' gui=NONE'.s:c.      ' cterm=NONE'.s:c.      ' term=NONE'.s:c    .''''
-exe 'let s:fmt_ital = '' gui=NONE'.s:i.      ' cterm=NONE'.s:i.      ' term=NONE'.s:i    .''''
-exe 'let s:fmt_stnd = '' gui=NONE'.s:s.      ' cterm=NONE'.s:s.      ' term=NONE'.s:s    .''''
-exe 'let s:fmt_revr = '' gui=NONE'.s:r.      ' cterm=NONE'.s:r.      ' term=NONE'.s:r    .''''
-exe 'let s:fmt_revb = '' gui=NONE'.s:r.s:b.  ' cterm=NONE'.s:r.s:b.  ' term=NONE'.s:r.s:b.''''
+exe 'let s:fmt_none = '' gui=NONE'        .''''
+exe 'let s:fmt_bold = '' gui=NONE'.s:b    .''''
+exe 'let s:fmt_bldi = '' gui=NONE'.s:b    .''''
+exe 'let s:fmt_undr = '' gui=NONE'.s:u    .''''
+exe 'let s:fmt_undb = '' gui=NONE'.s:u.s:b.''''
+exe 'let s:fmt_undi = '' gui=NONE'.s:u    .''''
+exe 'let s:fmt_curl = '' gui=NONE'.s:c    .''''
+exe 'let s:fmt_ital = '' gui=NONE'.s:i    .''''
+exe 'let s:fmt_stnd = '' gui=NONE'.s:s    .''''
+exe 'let s:fmt_revr = '' gui=NONE'.s:r    .''''
+exe 'let s:fmt_revb = '' gui=NONE'.s:r.s:b.''''
 
 let s:sp_none       = ''
 let s:sp_foreground = ''
@@ -340,27 +319,28 @@ let s:sp_darkred    = ''
 let s:sp_darkpurple = ''
 
 exe 'let s:sp_none       = '' guisp='. s:none                   .''''
-exe 'let s:sp_foreground = '' guisp='. s:palette.gui.foreground .''''
-exe 'let s:sp_background = '' guisp='. s:palette.gui.background .''''
-exe 'let s:sp_selection  = '' guisp='. s:palette.gui.selection  .''''
-exe 'let s:sp_line       = '' guisp='. s:palette.gui.line       .''''
-exe 'let s:sp_comment    = '' guisp='. s:palette.gui.comment    .''''
-exe 'let s:sp_red        = '' guisp='. s:palette.gui.red        .''''
-exe 'let s:sp_orange     = '' guisp='. s:palette.gui.orange     .''''
-exe 'let s:sp_yellow     = '' guisp='. s:palette.gui.yellow     .''''
-exe 'let s:sp_green      = '' guisp='. s:palette.gui.green      .''''
-exe 'let s:sp_aqua       = '' guisp='. s:palette.gui.aqua       .''''
-exe 'let s:sp_blue       = '' guisp='. s:palette.gui.blue       .''''
-exe 'let s:sp_purple     = '' guisp='. s:palette.gui.purple     .''''
-exe 'let s:sp_window     = '' guisp='. s:palette.gui.window     .''''
-exe 'let s:sp_addbg      = '' guisp='. s:palette.gui.addbg      .''''
-exe 'let s:sp_addfg      = '' guisp='. s:palette.gui.addfg      .''''
-exe 'let s:sp_changebg   = '' guisp='. s:palette.gui.changebg   .''''
-exe 'let s:sp_changefg   = '' guisp='. s:palette.gui.changefg   .''''
-exe 'let s:sp_darkblue   = '' guisp='. s:palette.gui.darkblue   .''''
-exe 'let s:sp_darkcyan   = '' guisp='. s:palette.gui.darkcyan   .''''
-exe 'let s:sp_darkred    = '' guisp='. s:palette.gui.darkred    .''''
-exe 'let s:sp_darkpurple = '' guisp='. s:palette.gui.darkpurple .''''
+exe 'let s:sp_foreground = '' guisp='. s:palette.foreground .''''
+exe 'let s:sp_background = '' guisp='. s:palette.background .''''
+exe 'let s:sp_selection  = '' guisp='. s:palette.selection  .''''
+exe 'let s:sp_line       = '' guisp='. s:palette.line       .''''
+exe 'let s:sp_comment    = '' guisp='. s:palette.comment    .''''
+exe 'let s:sp_red        = '' guisp='. s:palette.red        .''''
+exe 'let s:sp_orange     = '' guisp='. s:palette.orange     .''''
+exe 'let s:sp_yellow     = '' guisp='. s:palette.yellow     .''''
+exe 'let s:sp_green      = '' guisp='. s:palette.green      .''''
+exe 'let s:sp_aqua       = '' guisp='. s:palette.aqua       .''''
+exe 'let s:sp_blue       = '' guisp='. s:palette.blue       .''''
+exe 'let s:sp_purple     = '' guisp='. s:palette.purple     .''''
+exe 'let s:sp_window     = '' guisp='. s:palette.window     .''''
+exe 'let s:sp_addbg      = '' guisp='. s:palette.addbg      .''''
+exe 'let s:sp_addfg      = '' guisp='. s:palette.addfg      .''''
+exe 'let s:sp_changebg   = '' guisp='. s:palette.changebg   .''''
+exe 'let s:sp_changefg   = '' guisp='. s:palette.changefg   .''''
+exe 'let s:sp_darkblue   = '' guisp='. s:palette.darkblue   .''''
+exe 'let s:sp_darkcyan   = '' guisp='. s:palette.darkcyan   .''''
+exe 'let s:sp_darkred    = '' guisp='. s:palette.darkred    .''''
+exe 'let s:sp_darkgreen  = '' guisp='. s:palette.darkgreen  .''''
+exe 'let s:sp_darkpurple = '' guisp='. s:palette.darkpurple .''''
 
 " }}}
 " Vim Highlighting: (see :help highlight-groups) {{{
@@ -376,20 +356,26 @@ exe 'hi! DiffAdd'         .s:fg_addfg      .s:bg_addbg      .s:fmt_none
 exe 'hi! DiffChange'      .s:fg_changefg   .s:bg_changebg   .s:fmt_none
 exe 'hi! DiffDelete'      .s:fg_background .s:bg_delbg      .s:fmt_none
 exe 'hi! DiffText'        .s:fg_background .s:bg_blue       .s:fmt_none
-exe 'hi! ErrorMsg'        .s:fg_background .s:bg_red        .s:fmt_none
+exe 'hi! ErrorMsg'        .s:fg_red        .s:bg_none       .s:fmt_none
 exe 'hi! VertSplit'       .s:fg_selection  .s:bg_none       .s:fmt_none
-exe 'hi! Folded'          .s:fg_comment    .s:bg_darkcolumn .s:fmt_none
-exe 'hi! FoldColumn'      .s:fg_none       .s:bg_darkcolumn .s:fmt_none
+exe 'hi! Folded'          .s:fg_comment    .s:bg_line       .s:fmt_none
+exe 'hi! FoldColumn'      .s:fg_none       .s:bg_none       .s:fmt_none
 exe 'hi! SignColumn'      .s:fg_none       .s:bg_none       .s:fmt_none
-" IncSearch
+exe 'hi! IncSearch'       .s:fg_background .s:bg_orange     .s:fmt_none
 exe 'hi! LineNr'          .s:fg_selection  .s:bg_none       .s:fmt_none
 exe 'hi! CursorLineNr'    .s:fg_yellow     .s:bg_none       .s:fmt_none
-exe 'hi! MatchParen'      .s:fg_background .s:bg_changebg   .s:fmt_undr
+exe 'hi! MatchParen'      .s:fg_none       .s:bg_none       .s:fmt_undr
 exe 'hi! ModeMsg'         .s:fg_green      .s:bg_none       .s:fmt_none
 exe 'hi! MoreMsg'         .s:fg_green      .s:bg_none       .s:fmt_none
 exe 'hi! NonText'         .s:fg_selection  .s:bg_none       .s:fmt_none
-exe 'hi! Pmenu'           .s:fg_foreground .s:bg_selection  .s:fmt_none
+
+exe 'hi! Pmenu'           .s:fg_foreground .s:bg_darkbar    .s:fmt_none
 exe 'hi! PmenuSel'        .s:fg_foreground .s:bg_selection  .s:fmt_revr
+exe 'hi! PmenuSbar'       .s:fg_background .s:bg_gray       .s:fmt_none
+exe 'hi! PmenuThumb'      .s:fg_background .s:bg_foreground .s:fmt_none
+
+" exe 'hi! Pmenu'           .s:fg_foreground .s:bg_selection  .s:fmt_none
+" exe 'hi! PmenuSel'        .s:fg_foreground .s:bg_selection  .s:fmt_revr
 "   PmenuSbar"
 "   PmenuThumb"
 exe 'hi! Question'        .s:fg_green      .s:bg_none       .s:fmt_none
@@ -399,7 +385,7 @@ exe 'hi! SpellCap'        .s:fg_blue       .s:bg_darkblue   .s:fmt_undr
 exe 'hi! SpellLocal'      .s:fg_aqua       .s:bg_darkcyan   .s:fmt_undr
 exe 'hi! SpellBad'        .s:fg_red        .s:bg_darkred    .s:fmt_undr
 exe 'hi! SpellRare'       .s:fg_purple     .s:bg_darkpurple .s:fmt_undr
-exe 'hi! StatusLine'      .s:fg_comment    .s:bg_background .s:fmt_revr
+exe 'hi! StatusLine'      .s:fg_comment    .s:bg_background .s:fmt_none
 exe 'hi! StatusLineNC'    .s:fg_window     .s:bg_comment    .s:fmt_revr
 exe 'hi! TabLine'         .s:fg_foreground .s:bg_darkcolumn .s:fmt_revr
 "   TabLineFill"
@@ -407,53 +393,54 @@ exe 'hi! TabLine'         .s:fg_foreground .s:bg_darkcolumn .s:fmt_revr
 exe 'hi! Title'           .s:fg_yellow     .s:bg_none       .s:fmt_none
 exe 'hi! Visual'          .s:fg_none       .s:bg_selection  .s:fmt_none
 "   VisualNos"
-exe 'hi! WarningMsg'      .s:fg_red        .s:bg_none       .s:fmt_none
+exe 'hi! WarningMsg'      .s:fg_orange     .s:bg_none       .s:fmt_none
 exe 'hi! LongLineWarning' .s:fg_red        .s:bg_none       .s:fmt_none
-" exe 'hi! WildMenu'        .s:fg_background .s:bg_yellow     .s:fmt_none
+exe 'hi! WildMenu'        .s:fg_background .s:bg_yellow     .s:fmt_none
+" exe 'hi! WildMenu'        .s:fg_blue .s:bg_selection     .s:fmt_none
 
 " Use defined custom background colour for terminal Vim.
-if !has('gui_running') && exists('g:hybrid_custom_term_colors') && g:hybrid_custom_term_colors == 1
-  let s:bg_normal = s:bg_none
-else
-  let s:bg_normal = s:bg_background
-endif
-exe 'hi! Normal'        .s:fg_foreground  .s:bg_normal      .s:fmt_none
+exe 'hi! Normal'        .s:fg_foreground  .s:bg_background .s:fmt_none
 
 " }}}
 " Neovim Terminal Colors {{{
 " ----------------------------------------------------------------------------
-let g:terminal_color_0  = s:palette.gui.background " background gray
-let g:terminal_color_8  = s:gui_comment " comment gray
+let g:terminal_color_0  = s:background " background gray
+let g:terminal_color_8  = s:comment " comment gray
 
-let g:terminal_color_1  = s:palette.gui.red " red
-let g:terminal_color_9  = s:palette.gui.red " dark red
+let g:terminal_color_1  = s:red " red
+let g:terminal_color_9  = s:red " dark red
 
-let g:terminal_color_2  = s:palette.gui.green " green
+let g:terminal_color_2  = s:green " green
 let g:terminal_color_10 = g:terminal_color_2
 
-let g:terminal_color_3  = s:palette.gui.yellow " yellow
-let g:terminal_color_11 = s:palette.gui.orange " dark yellow (actually orange)
+let g:terminal_color_3  = s:yellow " yellow
+let g:terminal_color_11 = s:orange " dark yellow (actually orange)
 
-let g:terminal_color_4  = s:palette.gui.blue " blue
+let g:terminal_color_4  = s:blue " blue
 let g:terminal_color_12 = '#729fcf' " another shade of blue
 
-let g:terminal_color_5  = s:palette.gui.purple " purple
+let g:terminal_color_5  = s:purple " purple
 let g:terminal_color_13 = g:terminal_color_5
 
-let g:terminal_color_6  = s:palette.gui.aqua " aqua
-let g:terminal_color_14 = s:palette.gui.darkcyan  " dark aqua
+let g:terminal_color_6  = s:aqua " aqua
+let g:terminal_color_14 = s:darkcyan  " dark aqua
 
 let g:terminal_color_7  = '#d3d7cf'
 let g:terminal_color_15 = '#707880' " another shade of grade
 
 " }}}
+" Vanilla colorscheme ---------------------------------------------------------
+" Gutter: {{{
+
+" }}}
 " Generic Syntax Highlighting: (see :help group-name) {{{
-" ----------------------------------------------------------------------------
-exe 'hi! Comment'         .s:fg_comment     .s:bg_none        .s:fmt_ital
+
+exe 'hi! Comment'         .s:fg_comment     .s:bg_none        .s:fmt_none
 
 exe 'hi! Constant'        .s:fg_red         .s:bg_none        .s:fmt_none
 exe 'hi! String'          .s:fg_green       .s:bg_none        .s:fmt_none
 "   Character"
+exe 'hi! Character'       .s:fg_green       .s:bg_none        .s:fmt_none
 "   Number"
 "   Boolean"
 "   Float"
@@ -488,12 +475,9 @@ exe 'hi! Special'         .s:fg_green       .s:bg_none        .s:fmt_none
 "   Debug"
 "
 exe 'hi! Underlined'      .s:fg_blue        .s:bg_none        .s:fmt_none
-
 exe 'hi! Ignore'          .s:fg_none        .s:bg_none        .s:fmt_none
-
-exe 'hi! Error'           .s:fg_red         .s:bg_darkred     .s:fmt_undr
-
-exe 'hi! Todo'            .s:fg_addfg       .s:bg_none        .s:fmt_none
+exe 'hi! Error'           .s:fg_red         .s:bg_none        .s:fmt_undr
+exe 'hi! Todo'            .s:fg_none        .s:bg_none        .s:fmt_undb
 
 " Quickfix window highlighting
 exe 'hi! qfLineNr'        .s:fg_yellow      .s:bg_none        .s:fmt_none
@@ -502,8 +486,31 @@ exe 'hi! qfLineNr'        .s:fg_yellow      .s:bg_none        .s:fmt_none
 "   qfError"
 
 " }}}
-" Diff Syntax Highlighting: {{{
-" ----------------------------------------------------------------------------
+" Plugin specific -------------------------------------------------------------
+" Coc: {{{
+
+exe 'hi! CocErrorSign'   .s:fg_red         .s:bg_none .s:fmt_none
+exe 'hi! CocWarningSign' .s:fg_orange      .s:bg_none .s:fmt_none
+exe 'hi! CocInfoSign'    .s:fg_yellow      .s:bg_none .s:fmt_none
+exe 'hi! CocHintSign'    .s:fg_blue        .s:bg_none .s:fmt_none
+exe 'hi! CocSelectedText' .s:fg_red        .s:bg_none .s:fmt_none
+
+" }}}
+" Neomake: {{{
+
+exe 'hi! NeomakeErrorSign'   .s:fg_red         .s:bg_none .s:fmt_none
+
+" }}}
+" GitGutter: {{{
+
+exe 'hi! GitGutterAdd'    .s:fg_green       .s:bg_none        .s:fmt_none
+exe 'hi! GitGutterChange' .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe 'hi! GitGutterDelete' .s:fg_red         .s:bg_none        .s:fmt_none
+
+" }}}
+" Filetype specific -----------------------------------------------------------
+" Diff: {{{
+
 " Diff
 "   diffOldFile
 "   diffNewFile
@@ -527,9 +534,16 @@ exe 'hi! diffLine'        .s:fg_purple      .s:bg_none        .s:fmt_none
 "   diffComment
 
 " }}}
+" Vim: {{{
 
-exe 'hi! NeomakeErrorSign'   .s:fg_red         .s:bg_none .s:fmt_none
+exe 'hi! vimCommentTitle' .s:fg_none         .s:bg_none        .s:fmt_undb
 
+" }}}
+" Rust: {{{
+
+" exe 'hi! rustCommentLineDoc' .s:fg_comment   .s:bg_none        .s:fmt_none
+
+" }}}
 " Legal: {{{
 " ----------------------------------------------------------------------------
 " Copyright (c) 2011 Ethan Schoonover
